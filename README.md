@@ -13,6 +13,7 @@ AI systems builder with a PhD in theoretical physics. I build LLM-powered tools 
 
 ## Projects
 
+- **Autonomous security audit agent** (Python, Claude API) · [Architecture & design overview](https://github.com/EPetreska/security-agent-overview)
 - [full-stack-nft-marketplace](https://github.com/EPetreska/full-stack-nft-marketplace): Next.js, TypeScript, Solidity, Hardhat, IPFS, Ethers.js
 
 ## Stack
