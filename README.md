@@ -1,8 +1,16 @@
-AI systems builder with a PhD in theoretical physics. I build LLM-powered tools for code review, currently focused on smart contract security.
+AI systems builder with a PhD in theoretical physics. I build LLM agents with RAG, guardrails enforced in code, and evals, currently for loan processing and smart contract security.
 
 [LinkedIn](https://linkedin.com/in/elena-petreska) · [ResearchGate](https://researchgate.net/profile/Elena-Petreska)
 
 ## What I'm building
+
+**Agentic loan processing system** (Python, LangGraph, MCP)
+- Two LangGraph agents take US personal loan applications from submission to signed offer: an application agent resolves missing or inconsistent documents and follows up with the customer; an offer agent answers questions from the bank's documents and escalates changes to a human loan officer.
+- The agents act only through their own tools on a custom MCP server and client, with session tokens limited to one case.
+- Guardrails enforced in code for PII (the LLM never sees the SSN or contact details), prompt injection and business rules. Every action is logged with the agent's reason.
+- RAG over the bank's loan terms and 42 CFPB consumer guides in pgvector, embedded locally (nomic-embed-text via Ollama). Retrieval eval: hit rate @4 88%, MRR 0.76.
+- 13 scenario evals with a simulated customer and loan officer, including prompt injection attacks, judged by code-based graders. Tests run in GitHub Actions CI.
+- A reference design for LLM agents in regulated finance, with synthetic applicants. Source is public.
 
 **Autonomous security audit agent** (Python, Claude API)
 - Multi-agent Solver–Verifier loop: the Solver builds an attack scenario, and an independent Verifier confirms it or sends it back with feedback. A finding is confirmed only after two consecutive passing reviews.
@@ -13,12 +21,13 @@ AI systems builder with a PhD in theoretical physics. I build LLM-powered tools 
 
 ## Projects
 
+- **Agentic loan processing system** (Python, LangGraph, MCP) · [agentic-loan-processing](https://github.com/EPetreska/agentic-loan-processing)
 - **Autonomous security audit agent** (Python, Claude API) · [Architecture & design overview](https://github.com/EPetreska/security-agent-overview)
 - [full-stack-nft-marketplace](https://github.com/EPetreska/full-stack-nft-marketplace): Next.js, TypeScript, Solidity, Hardhat, IPFS, Ethers.js
 
 ## Stack
 
-Python, TypeScript, Claude API, RAG, embeddings, Chroma, MCP, Docker, Git, Linux, Solidity, Foundry, Hardhat, CodeQL, Semgrep
+Python, TypeScript, Claude API, LangGraph, LangChain, RAG, embeddings, pgvector, Chroma, MCP, PostgreSQL, Pydantic, pytest, LangSmith, Docker, GitHub Actions, Git, Linux, Solidity, Foundry, Hardhat, CodeQL, Semgrep
 
 ## Background
 
