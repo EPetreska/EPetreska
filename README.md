@@ -4,7 +4,7 @@ AI systems builder with a PhD in theoretical physics. I build LLM agents with RA
 
 ## What I'm building
 
-**Agentic loan processing system** (Python, LangGraph, MCP)
+[**Agentic loan processing system**](https://github.com/EPetreska/agentic-loan-processing) (Python, LangGraph, MCP)
 - Two LangGraph agents take US personal loan applications from submission to signed offer: an application agent resolves missing or inconsistent documents and follows up with the customer; an offer agent answers questions from the bank's documents and escalates changes to a human loan officer.
 - The agents act only through their own tools on a custom MCP server and client, with session tokens limited to one case.
 - Guardrails enforced in code for PII (the LLM never sees the SSN or contact details), prompt injection and business rules. Every action is logged with the agent's reason.
@@ -12,7 +12,7 @@ AI systems builder with a PhD in theoretical physics. I build LLM agents with RA
 - 13 scenario evals with a simulated customer and loan officer, including prompt injection attacks, judged by code-based graders. Tests run in GitHub Actions CI.
 - A reference design for LLM agents in regulated finance, with synthetic applicants. Source is public.
 
-**Autonomous security audit agent** (Python, Claude API)
+[**Autonomous security audit agent**](https://github.com/EPetreska/security-agent-overview) (Python, Claude API)
 - Multi-agent Solver–Verifier loop: the Solver builds an attack scenario, and an independent Verifier confirms it or sends it back with feedback. A finding is confirmed only after two consecutive passing reviews.
 - Agentic RAG over 265 public audit reports (3,110 passages), embedded locally (nomic-embed-text via Ollama) and stored in Chroma. The agent calls it as a tool.
 - The same search runs as an MCP server, which I use during manual reviews from Claude Code.
