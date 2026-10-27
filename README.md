@@ -9,7 +9,7 @@ AI systems builder with a PhD in theoretical physics. I build LLM agents with RA
 - The agents act only through their own tools on a custom MCP server and client, with session tokens limited to one case.
 - Guardrails enforced in code for PII (the LLM never sees the SSN or contact details), prompt injection and business rules. Every action is logged with the agent's reason.
 - RAG over the bank's loan terms and 42 CFPB consumer guides in pgvector, embedded locally (nomic-embed-text via Ollama). Retrieval eval: hit rate @4 88%, MRR 0.76.
-- 13 scenario evals with a simulated customer and loan officer, including prompt injection attacks, judged by code-based graders. Tests run in GitHub Actions CI.
+- 13 scenario evals with a simulated customer and loan officer, including prompt injection attacks, judged by code-based graders and run 3 times each. Claude Sonnet 5.5 passed all 39 runs (about $0.05 per run); a small local model (Qwen 3 4B) passed 29 of 39. No attack got through with either model. Tests run in GitHub Actions CI.
 - A reference design for LLM agents in regulated finance, with synthetic applicants. Source is public.
 
 [**Autonomous security audit agent**](https://github.com/EPetreska/security-agent-overview) (Python, Claude API)
